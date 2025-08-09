@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Torre de Decisiones 3D - Online</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- CDNs -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.162.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="ui">
+    <div id="leftPanel">
+      <h1>Torre de Decisiones 3D</h1>
+      <div id="lobby">
+        <input id="roomId" placeholder="Código de sala (ej: sala123)" />
+        <input id="playerName" placeholder="Tu nombre" />
+        <button id="createBtn">Crear sala</button>
+        <button id="joinBtn">Unirse</button>
+        <div id="playersList"></div>
+        <button id="startBtn" disabled>Iniciar partida</button>
+      </div>
+      <div id="info">
+        <p id="turnInfo">Turno: —</p>
+        <p id="stabilityInfo">Estabilidad: —</p>
+        <button id="resetView">Reset cámara</button>
+      </div>
+    </div>
+    <div id="canvasHolder"></div>
+  </div>
+
+  <script src="js/game-client.js"></script>
+</body>
+</html>
